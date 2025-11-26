@@ -18,10 +18,9 @@ CREATE TABLE IF NOT EXISTS Users (
 ) ENGINE=InnoDB;
 
 -- Sample admin
--- Replace the hash below with password_hash('password123', PASSWORD_DEFAULT) in PHP
 INSERT INTO Users (firstname, lastname, email, password, role)
 VALUES ('Admin', 'User', 'admin@project2.com', 
-        '$2y$10$uHcD7nZ1x4B0oaqe7i0r1uS5jN0rA6JH2h1C5yD6H7vJKz8QWmE5m', 'admin');
+        '$2b$12$K0oq9XHYhsWlKHnimHN3AeeR8Qc5O10aL/4ER72sa7PdcuaYvL7d6', 'admin');
 
 -- Table for Contacts
 CREATE TABLE IF NOT EXISTS Contacts (
