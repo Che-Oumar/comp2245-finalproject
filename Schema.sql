@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Users (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
--- Sample admin
+-- Insert Users
 INSERT INTO Users (firstname, lastname, email, password, role)
 VALUES ('Admin', 'User', 'admin@project2.com', 
         '$2b$12$K0oq9XHYhsWlKHnimHN3AeeR8Qc5O10aL/4ER72sa7PdcuaYvL7d6', 'admin');
