@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolphin CRM - New User</title>
+    <link rel="stylesheet" href="new_user.css">
+</head>
+<body>
+
+
+<nav class="navbar">
+    <div class="logo">🐬 Dolphin CRM</div>
+</nav>
+
+
+<div class="sidenav">
+    <a href="#">Home</a>
+    <a href="#">New Contact</a>
+    <a href="#">Users</a>
+    <hr>
+    <a href="#">Logout</a>
+</div>
+
+
+<div class="main-content">
+    <div class="login-container">
+        <h2>New User</h2>
+
+        <form action="new_user.php" method="POST">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            
+
+            <label for="role">Role:</label>
+            <select name="role" id="role" required>
+                <option value="">Select a role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <option value="guest">Guest</option>
+            </select>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    <footer>
+        Copyright © 2025 Dolphin CRM
+    </footer>
+</div>
+
+</body>
+</html>
