@@ -1,8 +1,12 @@
+-- schema
+
 -- Create Dolphincrm Database
+
+DROP DATABASE IF EXISTS dolphin_crm;
 CREATE DATABASE IF NOT EXISTS dolphin_crm CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE dolphin_crm;
 
---Table structure for Users
+-- Table structure for Users
 CREATE TABLE IF NOT EXISTS Users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     firstname VARCHAR(50) NOT NULL,
@@ -14,10 +18,10 @@ CREATE TABLE IF NOT EXISTS Users (
 ) ENGINE=InnoDB;
 
 -- Sample admin
+-- Replace the hash below with password_hash('password123', PASSWORD_DEFAULT) in PHP
 INSERT INTO Users (firstname, lastname, email, password, role)
 VALUES ('Admin', 'User', 'admin@project2.com', 
-        '123', 'admin');
--- Replace the hash above with: password_hash('password123', PASSWORD_DEFAULT) in PHP
+        '$2y$10$uHcD7nZ1x4B0oaqe7i0r1uS5jN0rA6JH2h1C5yD6H7vJKz8QWmE5m', 'admin');
 
 -- Table for Contacts
 CREATE TABLE IF NOT EXISTS Contacts (
@@ -29,8 +33,8 @@ CREATE TABLE IF NOT EXISTS Contacts (
     telephone VARCHAR(20) NOT NULL,
     company VARCHAR(100) NOT NULL,
     type VARCHAR(50) NOT NULL,
-    assigned_to INT,
-    created_by INT,
+    assigned_to INT NULL,
+    created_by INT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (assigned_to) REFERENCES Users(id) ON DELETE SET NULL,
@@ -42,7 +46,7 @@ CREATE TABLE IF NOT EXISTS Notes (
     id INT PRIMARY KEY AUTO_INCREMENT,
     contact_id INT NOT NULL,
     comment TEXT NOT NULL,
-    created_by INT,
+    created_by INT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (contact_id) REFERENCES Contacts(id) ON DELETE CASCADE,
