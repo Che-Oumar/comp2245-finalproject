@@ -11,9 +11,16 @@ Dashboard Page()
 ![alt text](image-1.png)
 
 New Contact Page()
-![alt text](image-2.png)
+![alt text](image-4.png)
+Must be verified forms
 
 Contact Details Page()
 ![alt text](image-3.png)
 
 we gotta do the php files and the Ajax to not have to refresh the pages
+
+Php must be able to: 
+hold php cache and log out of it
+insert into users
+list of all users
+list of notes of user
