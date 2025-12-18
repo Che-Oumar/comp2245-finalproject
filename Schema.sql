@@ -17,12 +17,6 @@ CREATE TABLE IF NOT EXISTS Users (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
--- Insert Users
-INSERT INTO Users (firstname, lastname, email, password, role)
-VALUES ('Admin', 'User', 'admin@project2.com', 
-        '$2b$12$K0oq9XHYhsWlKHnimHN3AeeR8Qc5O10aL/4ER72sa7PdcuaYvL7d6', 'admin');
-
-
 -- Table for Contacts
 CREATE TABLE IF NOT EXISTS Contacts (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -40,10 +34,7 @@ CREATE TABLE IF NOT EXISTS Contacts (
     FOREIGN KEY (assigned_to) REFERENCES Users(id) ON DELETE SET NULL,
     FOREIGN KEY (created_by) REFERENCES Users(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
--- Insert Contacts
--- INSERT INTO Contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by) 
--- VALUES
--- Table for Notes
+
 CREATE TABLE IF NOT EXISTS Notes (
     id INT PRIMARY KEY AUTO_INCREMENT,
     contact_id INT NOT NULL,
@@ -54,7 +45,3 @@ CREATE TABLE IF NOT EXISTS Notes (
     FOREIGN KEY (contact_id) REFERENCES Contacts(id) ON DELETE CASCADE,
     FOREIGN KEY (created_by) REFERENCES Users(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
-
--- Insert Notes
--- INSERT INTO Notes (contact_id, comment, created_by) 
--- VALUES
