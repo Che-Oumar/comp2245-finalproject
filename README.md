@@ -23,5 +23,5 @@ we gotta do the php files and the Ajax to not have to refresh the pages
 Php must be able to: 
 hold php cache and log out of it
 insert into users
-list of all users
+list of all users 
 list of notes of user

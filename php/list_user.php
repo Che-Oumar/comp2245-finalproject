@@ -8,3 +8,4 @@ $stmt = $pdo->query("
 ");
 
 echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+ 

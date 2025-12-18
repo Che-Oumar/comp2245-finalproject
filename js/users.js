@@ -1,4 +1,4 @@
-fetch("php/list_users.php")
+fetch("php/list_user.php")
 .then(r => r.json())
 .then(users => {
     const tbody = document.getElementById("users");
@@ -11,4 +11,8 @@ fetch("php/list_users.php")
                 <td>${u.created_at}</td>
             </tr>`;
     });
+});
+
+document.querySelector(".addBtn").addEventListener("click", () => {
+    window.location.href = "NewUser.html";
 });
