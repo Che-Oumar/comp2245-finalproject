@@ -1,4 +1,4 @@
-fetch("php/list_user.php")
+fetch("php/viewUsers.php")
 .then(r => r.json())
 .then(users => {
     const tbody = document.getElementById("users");

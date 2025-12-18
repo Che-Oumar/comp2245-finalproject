@@ -29,8 +29,17 @@
         <h2>New User</h2>
 
         <form id="new_user_form">
-        <input name="first_name" required>
-        <input name="last_name" required>
+            <div class="form-row">
+                <div>
+                    <label>First Name</label>
+                    <input name="first_name" required>
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input name="last_name" required>
+                </div>
+            </div>
+
         <input name="email" type="email" required>
         <input name="password" type="password" required>
         <select name="role" required>

@@ -2,14 +2,8 @@
 require "session_check.php";
 require "db.php";
 
-if ($_SESSION['role'] !== 'admin') {
-    http_response_code(403);
-    echo json_encode(["error" => "Forbidden"]);
-    exit;
-}
-
 $stmt = $pdo->query("
-    SELECT firstname, lastname, email, role, created_at
+    SELECT id, firstname, lastname
     FROM Users
 ");
 
