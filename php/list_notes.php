@@ -1,12 +1,10 @@
 <?php
-require "session_check.php"; // sets $_SESSION['user_id']
+require "session_check.php"; 
 require "db.php";
 
-// Get contact ID safely
 $contact_id = $_GET['contact_id'] ?? 0;
-$user_id = $_SESSION['user_id']; // currently logged-in user
+$user_id = $_SESSION['user_id']; 
 
-// Fetch contact info and notes in a single query
 $stmt = $pdo->prepare("
     SELECT 
         c.id, 
@@ -17,7 +15,7 @@ $stmt = $pdo->prepare("
     FROM Contacts c
     LEFT JOIN Notes n ON n.contact_id = c.id
     LEFT JOIN Users u ON n.created_by = u.id
-    WHERE c.id = ? AND c.created_by = ?
+    WHERE c.id = ? 
     ORDER BY n.created_at ASC
 ");
 $stmt->execute([$contact_id, $user_id]);
@@ -28,7 +26,7 @@ if (!$rows) {
     exit;
 }
 
-// Extract contact info from the first row
+//contact details
 $contact = [
     'id' => $rows[0]['id'],
     'title' => $rows[0]['title'],
@@ -40,7 +38,7 @@ $contact = [
     'type' => $rows[0]['type']
 ];
 
-// Extract notes
+// Notes
 $notes = [];
 foreach ($rows as $row) {
     if ($row['note_id']) { // skip if no notes

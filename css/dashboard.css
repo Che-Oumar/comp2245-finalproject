@@ -73,31 +73,28 @@ body {
     margin: 20px 0 10px;
 }
 
-/* DASHBOARD CARDS */
-.stats {
+/* DASHBOARD FILTER BAR */
+.filters {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
 }
 
-.card {
-    background-color: #fff;
-    padding: 20px;
-    width: 220px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.card h3 {
+.filters button {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
     font-size: 14px;
-    color: #6b7280;
-    margin-bottom: 10px;
+    cursor: pointer;
 }
 
-.card p {
-    font-size: 26px;
-    font-weight: bold;
-    color: #111827;
+.filters button:hover {
+    background-color: #1d4ed8;
 }
+
 
 /* TABLES */
 table {
@@ -131,7 +128,7 @@ tr:not(:last-child) {
 form {
     background-color: #fff;
     padding: 25px;
-    max-width: 600px;
+    max-width: 800px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -166,6 +163,51 @@ form button:hover {
     background-color: #1d4ed8;
 }
 
+.addBtn {
+    padding: 12px 20px;
+    background: #4a49f5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    /* Centering the button */
+    display: block;       
+    margin-left: auto;    
+}
+
+.addBtn:hover {
+    background: #3b3adc;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-row > div {
+    flex: 1;
+}
+
+form select[name="assigned_to"] {
+    margin-bottom: 25px;
+}
+
+ .btn-primary {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    width: auto;
+    margin-left: auto;
+    display: block;
+}
 /* CONTACT DETAILS */
 #contactInfo {
     background-color: #fff;
@@ -183,22 +225,20 @@ form button:hover {
     font-size: 14px;
 }
 
-
-.addBtn {
-    padding: 12px 20px;
-    background: #4a49f5;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.2s;
-
-    /* Align to the right */
-    display: block;       /* makes margin-right work */
-    margin-left: auto;    /* pushes button to the right */
+.badge-sales {
+    background-color: #facc15;
+    color: #92400e;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
 }
 
-.addBtn:hover {
-    background: #3b3adc;
+.badge-support {
+    background-color: #c4b5fd;
+    color: #4c1d95;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
 }

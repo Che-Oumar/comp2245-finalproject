@@ -1,27 +1,8 @@
-# comp2245-finalproject
-Login page (Done - Josh)
-User creation Page(Done- Josh)
-
-Required Pages:
-
-User List Page() 
-![alt text](images/image.png)
-
-Dashboard Page()
-![alt text](images/image-1.png)
-
-New Contact Page()
-![alt text](images/image-4.png)
-Must be verified forms
-
-Contact Details Page()
-![alt text](images/image-3.png)
-
-
-we gotta do the php files and the Ajax to not have to refresh the pages
-
-Php must be able to: 
-hold php cache and log out of it
-insert into users
-list of all users 
-list of notes of user
+i)ONLY ADMINS CAN ADD USERS FIX THIS
+ii)
+provide full code (minimally changed if possible) for the previous answers and ALL  errors:
+    switch_type.php( must also have the buttons differ depending on type)
+    Assign_contact.php
+    Sql for populating via js the update and creation dates
+    ignore error 7
+    

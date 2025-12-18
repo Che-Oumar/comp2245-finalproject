@@ -8,7 +8,7 @@
 <body>
 
 <header class="topbar">
-    <h1>Dolphin CRM</h1>
+    <h1>🐬 Dolphin CRM</h1>
 </header>
 
 <div class="container">
@@ -16,7 +16,6 @@
         <a href="dashboard.html">Home</a>
         <a href="NewContact.html" class="active">New Contact</a>
         <a href="users.html">Users</a>
-        <a href="ContactDetails.html">Contacts</a>
         <hr>
         <a href="#" id="logout">Logout</a>
     </aside>
@@ -24,32 +23,58 @@
     <main class="content">
         <h2>New Contact</h2>
 
-        <form id="newContactForm">
+        <form id="newContactForm" class="form-card">
+
+            <label>Title</label>
             <select name="title" required>
-                <option value="">Title</option>
+                <option value="">Select</option>
                 <option>Mr</option>
                 <option>Ms</option>
                 <option>Mrs</option>
             </select>
 
-            <input type="text" name="firstname" placeholder="First Name" required>
-            <input type="text" name="lastname" placeholder="Last Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="tel" name="telephone" placeholder="Telephone" required>
-            <input type="text" name="company" placeholder="Company" required>
+            <div class="form-row">
+                <div>
+                    <label>First Name</label>
+                    <input type="text" name="firstname" required>
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" name="lastname" required>
+                </div>
+            </div>
 
-            <select name="type" required>
-                <option value="">Type</option>
-                <option value="Sales Lead">Sales Lead</option>
-                <option value="Support">Support</option>
-            </select>
+            <div class="form-row">
+                <div>
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div>
+                    <label>Telephone</label>
+                    <input type="tel" name="telephone" required>
+                </div>
+            </div>
 
-            <select name="assigned_to">
-                <option value="">Assign To</option>
-                <!-- Loaded via AJAX -->
-            </select>
+            <div class="form-row">
+                <div>
+                    <label>Company</label>
+                    <input type="text" name="company" required>
+                </div>
+                <div>
+                    <label>Type</label>
+                    <select name="type" required>
+                        <option value="">Select</option>
+                        <option value="Sales Lead">Sales Lead</option>
+                        <option value="Support">Support</option>
+                    </select>
+                </div>
+            </div>
 
-            <button type="submit">Save</button>
+            
+            <label>Assigned To</label>
+            <select name="assigned_to" id="assigned_to"></select>
+
+            <button type="submit" class="btn-primary">Save</button>
         </form>
     </main>
 </div>

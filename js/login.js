@@ -1,20 +1,27 @@
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+const loginForm = document.getElementById('loginForm');
+const loginError = document.getElementById('loginError');
 
-    fetch("php/login.php", {
-        method: "POST",
-        body: new FormData(this)
+loginForm.addEventListener('submit', function(e) {
+    e.preventDefault(); 
+
+    loginError.textContent = '';
+
+    const formData = new FormData(loginForm);
+
+    fetch('php/login.php', {
+        method: 'POST',
+        body: formData
     })
     .then(response => response.json())
-    .then(data => {
-        if (data.status === "success") {
-            window.location.href = "dashboard.html";
+    .then(result => {
+        if (result.status === 'success') {
+            window.location.href = 'dashboard.html';
         } else {
-            alert("Login failed: Invalid email or password");
+            loginError.textContent = 'Invalid email or password';
         }
     })
     .catch(err => {
         console.error(err);
-        alert("Server error");
+        loginError.textContent = 'An error occurred during login';
     });
 });

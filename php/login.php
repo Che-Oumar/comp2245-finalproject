@@ -1,27 +1,6 @@
 <?php
-session_start();
+session_start(); 
 require "db.php";
-
-/*auto admin if no admin exists */
-$stmt = $pdo->prepare("SELECT id FROM Users WHERE email = ?");
-$stmt->execute(['admin@project2.com']);
-
-if ($stmt->rowCount() === 0) {
-    $hash = password_hash("password123", PASSWORD_DEFAULT);
-
-    $seed = $pdo->prepare("
-        INSERT INTO Users (firstname, lastname, email, password, role)
-        VALUES (?, ?, ?, ?, ?)
-    ");
-
-    $seed->execute([
-        "Admin",
-        "User",
-        "admin@project2.com",
-        $hash,
-        "admin"
-    ]);
-}
 
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';

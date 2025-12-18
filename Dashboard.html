@@ -8,7 +8,7 @@
 <body>
 
 <header class="topbar">
-    <h1> Dolphin CRM</h1>
+    <h1>🐬 Dolphin CRM</h1>
 </header>
 
 <div class="container">
@@ -16,25 +16,33 @@
         <a href="dashboard.html">Home</a>
         <a href="NewContact.html">New Contact</a>
         <a href="users.html">Users</a>
-        <a href="ContactDetails.html">Contacts</a>
         <hr>
         <a href="#" id="logout">Logout</a>
     </aside>
 
     <main class="content">
-        <h2>Dashboard</h2>
-
-        <div class="stats">
-            <div class="card">
-                <h3>Total Contacts</h3>
-                <p id="totalContacts">0</p>
-            </div>
-
-            <div class="card">
-                <h3>New Contacts</h3>
-                <p id="newContacts">0</p>
-            </div>
+        <h2>Dashboard<button type="button" class="addBtn">+ Add Contact</button></h2>
+        <div class="filters">
+            <span>Filter By:</span>
+            <button data-filter="all">All</button>
+            <button data-filter="Sales Lead">Sales Leads</button>
+            <button data-filter="Support">Support</button>
+            <button data-filter="mine">Assigned to me</button>
         </div>
+
+        <table class="contacts-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Type</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="contactsBody"></tbody>
+        </table>
+
     </main>
 </div>
 

@@ -1,4 +1,5 @@
 <?php
+
 require "session_check.php";
 require "db.php";
 
