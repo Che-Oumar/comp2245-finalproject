@@ -16,7 +16,7 @@ $stmt->execute([
     $_POST['telephone'],
     $_POST['company'],
     $_POST['type'],
-    $_POST['assigned_to'],
+    $_POST['assigned_to'] ?: null,
     $_SESSION['user_id']
 ]);
 
