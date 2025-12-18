@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dolphin CRM – Users</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<header class="topbar">
+    <h1> Dolphin CRM</h1>
+</header>
+
+<div class="container">
+    <aside class="sidebar">
+        <a href="dashboard.html">Home</a>
+        <a href="NewContact.html">New Contact</a>
+        <a href="users.html" class="active">Users</a>
+        <hr>
+        <a href="#" id="logout">Logout</a>
+    </aside>
+
+    <main class="content">
+        <h2>Users</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody id="users">
+                <!-- Filled by AJAX -->
+            </tbody>
+        </table>
+    </main>
+</div>
+
+<script src="php/users.js"></script>
+</body>
+</html>

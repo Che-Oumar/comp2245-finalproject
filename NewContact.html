@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dolphin CRM – New Contact</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<header class="topbar">
+    <h1>Dolphin CRM</h1>
+</header>
+
+<div class="container">
+    <aside class="sidebar">
+        <a href="dashboard.html">Home</a>
+        <a href="new_contact.html" class="active">New Contact</a>
+        <a href="users.html">Users</a>
+        <hr>
+        <a href="#" id="logout">Logout</a>
+    </aside>
+
+    <main class="content">
+        <h2>New Contact</h2>
+
+        <form id="newContactForm">
+            <select name="title" required>
+                <option value="">Title</option>
+                <option>Mr</option>
+                <option>Ms</option>
+                <option>Mrs</option>
+            </select>
+
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <input type="text" name="lastname" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="telephone" placeholder="Telephone" required>
+            <input type="text" name="company" placeholder="Company" required>
+
+            <select name="type" required>
+                <option value="">Type</option>
+                <option value="Sales Lead">Sales Lead</option>
+                <option value="Support">Support</option>
+            </select>
+
+            <select name="assigned_to">
+                <option value="">Assign To</option>
+                <!-- Loaded via AJAX -->
+            </select>
+
+            <button type="submit">Save</button>
+        </form>
+    </main>
+</div>
+
+<script src="php/contact.js"></script>
+</body>
+</html>

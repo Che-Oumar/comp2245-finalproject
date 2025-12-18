@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dolphin CRM - New User</title>
-    <link rel="stylesheet" href="new_user.css">
+    <link rel="stylesheet" href="css/new_user.css">
 </head>
 <body>
 
@@ -27,23 +27,19 @@
     <div class="login-container">
         <h2>New User</h2>
 
-        <form id="new_user_form" action="php/Insertuser.php" method="POST">
-            <input type="text" name="first_name" placeholder="First Name" required>
-            <input type="text" name="last_name" placeholder="Last Name" required>
-            <input type="email" name="email" placeholder="Email address" required>
-            <input type="password" name="password" placeholder="Password" required>
-            
-
-            <label for="role">Role:</label>
-            <select name="role" id="role" required>
-                <option value="">Select a role</option>
-                <option value="admin">Admin</option>
-                <option value="user">User</option>
-                <option value="guest">Guest</option>
-            </select>
-
-            <button type="submit">Save</button>
+        <form id="new_user_form">
+        <input name="first_name" required>
+        <input name="last_name" required>
+        <input name="email" type="email" required>
+        <input name="password" type="password" required>
+        <select name="role" required>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+        <button>Save</button>
         </form>
+        <script src="php/users.js"></script>
+
     </div>
 
     <footer>
