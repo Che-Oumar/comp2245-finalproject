@@ -1,6 +1,26 @@
 <?php
-session_start(); 
+session_start();
 require "db.php";
+
+$adminEmail = 'admin@project2.com';
+$stmt = $pdo->prepare("SELECT id FROM Users WHERE email = ?");
+$stmt->execute([$adminEmail]);
+
+if ($stmt->rowCount() === 0) {
+    
+    $hash = password_hash("password123", PASSWORD_DEFAULT);
+    $insert = $pdo->prepare("
+        INSERT INTO Users (firstname, lastname, email, password, role)
+        VALUES (?, ?, ?, ?, ?)
+    ");
+    $insert->execute([
+        "Admin",
+        "User",
+        $adminEmail,
+        $hash,
+        "admin"
+    ]);
+}
 
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
