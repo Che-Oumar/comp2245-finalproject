@@ -6,7 +6,7 @@ require "db.php";
 if ($_SESSION['role'] !== 'admin') {
     http_response_code(403);
     echo json_encode(["error" => "Forbidden"]);
-    exit;
+    
 }
 
 $stmt = $pdo->query("

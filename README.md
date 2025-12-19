@@ -1,8 +1,6 @@
-i)ONLY ADMINS CAN ADD USERS FIX THIS
-ii)
-provide full code (minimally changed if possible) for the previous answers and ALL  errors:
-    switch_type.php( must also have the buttons differ depending on type)
-    Assign_contact.php
-    Sql for populating via js the update and creation dates
-    ignore error 7
-    
+I)Still need to fix and refix the newcontacts
+II)the Contact details do not add notes yet
+III)listen to the robins or sabaton
+IV) New User has not been touched 
+V)Logout needs to be fully implemented
+

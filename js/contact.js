@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("php/list_user.php")
         .then(r => r.json())
         .then(users => {
-            const sel = document.getElementById("assigned_o");
+            const sel = document.getElementById("assigned_to");
             sel.innerHTML = `<option value="">Select User</option>`;
             users.forEach(u => {
                 sel.innerHTML += `<option value="${u.id}">${u.firstname} ${u.lastname}</option>`;
