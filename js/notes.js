@@ -1,6 +1,7 @@
 const id = new URLSearchParams(window.location.search).get("id");
 document.getElementById("contact_id").value = id;
 
+/* ---------- CONTACT DETAILS ---------- */
 fetch(`php/get_contact.php?id=${id}`)
 .then(r => r.json())
 .then(c => {
@@ -20,11 +21,59 @@ fetch(`php/get_contact.php?id=${id}`)
         <p>Type: ${c.type}</p>
     `;
 
-    // Switch button label
     document.getElementById("switch").innerText =
         `Switch to ${c.type === "Sales Lead" ? "Support" : "Sales Lead"}`;
 });
-document.querySelector(".addBtn").addEventListener("click", () => {
+
+/* ---------- LOAD NOTES ---------- */
+function loadNotes() {
+    fetch(`php/list_notes.php?contact_id=${id}`)
+        .then(r => r.json())
+        .then(data => {
+            const notesDiv = document.getElementById("notes");
+            notesDiv.innerHTML = "";
+
+            if (data.notes.length === 0) {
+                notesDiv.innerHTML = "<p>No notes yet.</p>";
+                return;
+            }
+
+            data.notes.forEach(n => {
+                notesDiv.innerHTML += `
+                    <div class="note-card">
+                        <p>${n.comment}</p>
+                        <small>
+                            by ${n.user_firstname} ${n.user_lastname}
+                            on ${n.created_at}
+                        </small>
+                    </div>
+                `;
+            });
+        });
+}
+
+loadNotes();
+
+
+document.getElementById("noteForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    fetch("php/add_note.php", {
+        method: "POST",
+        body: new FormData(this)
+    })
+    .then(r => r.json())
+    .then(res => {
+        if (res.status === "success") {
+            this.reset();
+            loadNotes();
+        } else {
+            alert("Error adding note");
+        }
+    });
+});
+
+document.getElementById("assignBtn").addEventListener("click", () => {
     fetch("php/assign_contact.php", {
         method: "POST",
         body: new URLSearchParams({ contact_id: id })
@@ -35,7 +84,5 @@ document.getElementById("switch").addEventListener("click", () => {
     fetch("php/switch_type.php", {
         method: "POST",
         body: new URLSearchParams({ contact_id: id })
-    })
-    .then(r => r.json())
-    .then(() => location.reload());
+    }).then(() => location.reload());
 });
