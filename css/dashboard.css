@@ -242,3 +242,28 @@ form select[name="assigned_to"] {
     font-size: 12px;
     font-weight: 600;
 }
+.alert {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; 
+    font-weight: bold;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert.info {
+    background-color: #cce5ff;
+    color: #004085;
+    border: 1px solid #b8daff;
+}
